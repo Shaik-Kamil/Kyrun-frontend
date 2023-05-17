@@ -1,5 +1,5 @@
 import React from 'react';
-import LoginPage from '../Components/LoginPage';
+import LoginPage from '../Components/Login';
 import MoreInfo from '../Components/MoreInfo';
 
 const Home = () => {
