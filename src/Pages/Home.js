@@ -1,13 +1,14 @@
 import React from 'react';
-import LoginPage from '../Components/Login';
-import MoreInfo from '../Components/MoreInfo';
+
+// import MoreInfo from '../Components/MoreInfo';
+import NavBar from '../Components/NavBar';
 
 const Home = () => {
     return (
-        <div>
-           <LoginPage /> 
-           <MoreInfo />
-        </div>
+        <NavBar>
+           <Home /> 
+           {/* <h1>MoreInfo</h1> */}
+           </NavBar>
     );
 };
 
