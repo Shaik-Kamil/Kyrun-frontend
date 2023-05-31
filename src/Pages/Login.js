@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import NavBar from '../Components/NavBar'
 import { useDispatch } from 'react-redux'
-import { authenticateUser } from '../redux/authSlice'
+// import { authenticateUser } from '../redux/authSlice'
+
 
 const Login = () => {
   const [values, setValues] = useState({

@@ -1,14 +1,81 @@
-img {
-    height: 600px;
-    width: 600px;
-    float: left;
+.login-page {
+    background-image: url("https://images.unsplash.com/photo-1552674605-db6ffd4facb5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cnVubmluZyUyMGdyb3VwfGVufDB8fDB8fHww&w=1000&q=80https://m.psecn.photoshelter.com/img-get/I0000qCY1mezmSlI/s/1200/I0000qCY1mezmSlI.jpg");
+    background-size: cover;
+  background-position: center;
+  height: 100vh;
 }
-
-div {
-    background-color: rgb(82,113,255);
+  
+  .login-form {
+    background-color: #f4efef;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(254, 249, 249, 0.4);
+  }
+  
+  .field {
+    margin-bottom: 20px;
+  }
+  
+  .label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #e9dede;
+  }
+  
+  .input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #5271FF;
+    background-color: transparent;
+    color: #ddd0d0;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .input:focus {
+    outline: none;
+    border-color: #5abeff;
+  }
+  
+  .button {
+    background-color: #5271FF;
+    color: #ecdddd;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #7cbae3;
+  }
+  
+  .register-link {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .register-link a {
+    color: #5abeff;
+    text-decoration: none;
+  }
+  
+  .register-link a:hover {
+    text-decoration: underline;
+  }
+  .field input[type="text"],
+.field input[type="password"],
+button[type="submit"] {
+  background-color: rgba(6, 6, 6, 0.8);
+  color: #1a46e6; /* Set the text color to bright white */
 }
-
+  
+.field label,
 button {
-    background-color: #1A5E63;
-    color: #FFD500;
+  color: #090c11; /* Set the text color to bright white */
 }

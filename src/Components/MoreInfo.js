@@ -1,33 +1,109 @@
 import React from 'react';
+import { useSpring, animated } from 'react-spring';
+import '../CSS/LandingNav.css';
 
-function MoreInfo(props) {
-    return (
-        <div>
-            <section>
-                <h1>Kyrun</h1>
-                <p>Connect with local joggers in your area.</p>
-                {/* add image */}
-            </section>
-            <section>
-                <h2>Find your match made in running heaven with our custom filters</h2>
-                <p>With Kyrun, you can filter runners based on gender, age, location, and even running pace. Once you've selected your preferences, you can browse through the results and click on the profiles that share your common interests and start building your netwrok.</p>
-                {/* add image that demonstrates a filter */}
-            </section>
-            <section>
-                <h2>Tie up your laces and start chatting with your running buddy</h2>
-                <p>Easily plan jogging sessions, ask questions, and get to know your jogging partners better with our in App chat feature.</p>
-                {/* add image */}
-            </section>
-            <section>
-                <h2>On Extra Step of Security</h2>
-                <p>One key feature of Kyrun is the SOS button, which you can use in case of an imminent threat during a jog with the person you matched with.</p>
-                {/* add image */}
-            </section>
-            
-            <p>Build your network today!</p>
+const MoreInfo= () => {
+  const fadeProps = useSpring({
+    opacity: 1,
+    from: { opacity: 0 },
+    config: { duration: 1000 },
+  });
 
+  const emojiProps = useSpring({
+    transform: 'translateY(-20px)',
+    from: { transform: 'translateY(0)' },
+    config: { duration: 1000 },
+  });
+
+  return (
+    <section className="landing-page">
+      <div className="landingNav">
+        <div className="landingNav-container">
+          <h2>
+            <a href="#more-info">More Info</a>
+          </h2>
+          <h2>
+            <a href="#download">Download</a>
+          </h2>
+        </div>
       </div>
-    );
-}
+      <div className="info">
+        <div className="top-content">
+          <h1>Welcome to Kyrun</h1>
+          <p>Your Running Companion</p>
+        </div>
+        <div className="logo-container">
+          <img
+            src="https://raw.githubusercontent.com/Shaik-Kamil/Kyrun-frontend/main/src/LOGO%20NO%20BG.png"
+            alt="Kyrun Logo"
+            className="landing-logo animated-logo"
+          />
+        </div>
+        <div className="content-container">
+          <animated.h2 style={fadeProps}>Find your match made in running heaven with our custom filters</animated.h2>
+          <p>
+            With Kyrun, you can filter runners based on gender, age, location, and even running pace. Once you've
+            selected your preferences, you can browse through the results and click on the profiles that share your
+            common interests and start building your network.
+          </p>
+        </div>
+        <section className="fade-in" id="more-info">
+          <h2>Tie up your laces and start chatting with your running buddy</h2>
+          <p>Easily plan jogging sessions, ask questions, and get to know your jogging partners better with our in-app chat feature.</p>
+          <animated.span style={emojiProps} role="img" aria-label="emoji">
+            🏃‍♀️
+          </animated.span>
+        </section>
+        <section className="fade-in">
+          <h2>One Extra Step of Security</h2>
+          <p>One key feature of Kyrun is the SOS button, which you can use in case of an imminent threat during a jog with the person you matched with.</p>
+          <div className="sos-gif-container">
+            <img
+              src="https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/3._Emergency_SOS_on_Wear_OS_a0ZSQ58.gif"
+              alt="Emergency SOS"
+              className="sos-gif"
+            />
+          </div>
+          <animated.span style={emojiProps} role="img" aria-label="emoji">
+            
+          </animated.span>
+        </section>
+        <p className="fade-in" id="download">Build your network today!</p>
+        <div className="paragraph-boxes">
+          <div className="box">
+            <p>Connect with local joggers in your area.</p>
+            <animated.span style={emojiProps} role="img" aria-label="emoji">
+              🌍
+            </animated.span>
+          </div>
+          <div className="box">
+            <p>Find your match made in running heaven with our custom filters.</p>
+            <animated.span style={emojiProps} role="img" aria-label="emoji">
+              💑
+            </animated.span>
+          </div>
+          <div className="box">
+            <p>Tie up your laces and start chatting with your running buddy.</p>
+            <animated.span style={emojiProps} role="img" aria-label="emoji">
+              💬
+            </animated.span>
+          </div>
+          <div className="box">
+            <p>One Extra Step of Security.</p>
+            <animated.span style={emojiProps} role="img" aria-label="emoji">
+              🔒
+            </animated.span>
+          </div>
+          <div className="box">
+            <p>Build your network today!</p>
+            <animated.span style={emojiProps} role="img" aria-label="emoji">
+              🌐
+            </animated.span>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 export default MoreInfo;

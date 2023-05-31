@@ -1,14 +1,18 @@
 import React from 'react';
-
-// import MoreInfo from '../Components/MoreInfo';
-import NavBar from '../Components/NavBar';
+import LoginPage from '../Components/LoginPage';
+import MoreInfo from '../Components/MoreInfo';
+import bg from '../images/Untitled design (2).png'
 
 const Home = () => {
     return (
-        <NavBar>
-           <Home /> 
-           {/* <h1>MoreInfo</h1> */}
-           </NavBar>
+        <div>
+           {/* <LoginPage /> */}
+           <br />
+           {/* <img className='bg' src={bg} /> */}
+           <MoreInfo />
+
+           
+        </div>
     );
 };
 
