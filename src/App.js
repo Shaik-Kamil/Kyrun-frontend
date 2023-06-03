@@ -5,6 +5,7 @@ import FourOFour from './Pages/FourOFour';
 import Home from './Pages/Home';
 import Index from './Pages/Index';
 import LoginPage from './Components/LoginPage';
+import MoreInfo from './Components/MoreInfo'; 
 import Groups from './Components/Groups';
 import Show from './Pages/Show';
 import NavBar from './Components/NavBar';
@@ -47,7 +48,7 @@ function App() {
   };
 
   const handleRegistration = (username, password) => {
-    // Make API call to register user
+    // Make API call to register user (post)
     setIsLoggedIn(true);
     setUsername('');
     setPassword('');

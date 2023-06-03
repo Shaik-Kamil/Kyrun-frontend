@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import RegistrationModal from './RegistrationModal';
 import '../CSS/LoginPage.css';
 
@@ -9,6 +10,7 @@ const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showRegistrationModal, setShowRegistrationModal] = useState(false);
+  const [profile, setProfile] = useState(null);
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -39,6 +41,20 @@ const LoginPage = () => {
     // Hide the registration modal
     setShowRegistrationModal(false);
   };
+
+  useEffect(() => {
+    const fetchProfile = async () => {
+      try {
+        // Fetch user profile data from the backend
+        const response = await axios.get('/api/profile');
+        setProfile(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchProfile();
+  }, []);
 
   return (
     <div className="login-page"> {/* Apply the "login-page" class */}
@@ -78,8 +94,37 @@ const LoginPage = () => {
       {showRegistrationModal && (
         <RegistrationModal onClose={handleRegistrationClose} />
       )}
+
+      {profile && (
+        <div className="profile">
+          <h2>User Profile</h2>
+          <p>Name: {profile.first_name} {profile.last_name}</p>
+          <p>Email: {profile.email}</p>
+          {/* Render other profile data as needed */}
+        </div>
+      )}
     </div>
   );
 };
 
 export default LoginPage;
+
+
+// const handleFormSubmit = async (event) => {
+//   event.preventDefault();
+
+//   try {
+//     // Perform login/authentication logic here
+//     const response = await axios.get('/api/login', {
+//       params: {
+//         email: email,
+//         password: password
+//       }
+//     });
+
+//     // Assuming successful login, navigate to MakeProfile component
+//     navigate('/makeProfile');
+//   } catch (error) {
+//     console.error(error);
+//   }
+// };
