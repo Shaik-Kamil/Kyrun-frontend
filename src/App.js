@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Switch, Routes, Route } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Routes,
+  Route,
+} from 'react-router-dom';
 import EditUser from './Pages/EditUser';
 import FourOFour from './Pages/FourOFour';
 import Home from './Pages/Home';
 import Index from './Pages/Index';
 import LoginPage from './Components/LoginPage';
-import MoreInfo from './Components/MoreInfo'; 
+import MoreInfo from './Components/MoreInfo';
 import Groups from './Components/Groups';
 import Show from './Pages/Show';
 import NavBar from './Components/NavBar';
@@ -21,6 +26,7 @@ import Yianna from './Components/Yianna';
 import Richie from './Components/Richie';
 import Melanie from './Components/Melanie';
 import Becky from './Components/Becky';
+import RunningRoutes from './Components/runningRoutes';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -99,11 +105,12 @@ function App() {
           <Route path="Richie" element={<Richie />} />
           <Route path="Melanie" element={<Melanie />} />
           <Route path="Becky" element={<Becky />} />
+          <Route path="/runningroutes/" element={<RunningRoutes />} />
           <Route path="*" element={<FourOFour />} />
-</Routes>
-</Router>
-</div>
-);
+        </Routes>
+      </Router>
+    </div>
+  );
 }
 
 export default App;
